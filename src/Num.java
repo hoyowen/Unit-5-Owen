@@ -1,27 +1,22 @@
-public class Num {
+public class Num implements Comparable {
     private int value;
 
-    public Num(){
-        value = 0;
-    }
+    public Num(int val) { value = val; }
 
     public String toString(){
         String result = value + "";
         return result;
     }
-    public int getValue(){
-        return value;
-    }
-    public void getValue(int myVal) {
-        value = myVal;
-    }
-    public boolean equals(int value2) {
-        if (value == value2) {
-            return true;
-        }
-        else{
-            return false;
-        }
+
+    public int getValue() { return value; }
+
+    public void setValue(int myVal) { value = myVal; }
+
+    public boolean equals(Num otherNum) { return this.getValue() == otherNum.getValue(); }
+
+    public int compareTo(Object obj){
+        Num otherNum = (Num) other;
+        return this.getValue() - otherNum.getValue();
 
     }
 }
